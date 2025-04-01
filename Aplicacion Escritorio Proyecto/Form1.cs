@@ -17,6 +17,10 @@ namespace Aplicacion_Escritorio_Proyecto
         public Form1()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Pink600, Primary.BlueGrey900, Primary.Pink500, Accent.Pink200, TextShade.BLACK);
         }
     }
 }
