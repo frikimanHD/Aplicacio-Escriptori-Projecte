@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.materialDrawer1 = new MaterialSkin.Controls.MaterialDrawer();
-            this.CercarComandesComboBox = new MaterialSkin.Controls.MaterialTabControl();
+            this.Pestanyes = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.RefrescarProductesButton = new MaterialSkin.Controls.MaterialButton();
             this.CercarProductesComboBox = new MaterialSkin.Controls.MaterialComboBox();
@@ -52,7 +54,7 @@
             this.NomProducteComanda = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.QuantitatComanda = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PreuProducteComanda = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
+            this.CercarComandesComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.ComandesListView = new MaterialSkin.Controls.MaterialListView();
             this.Numero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Client = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -68,22 +70,23 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.EmailComerçTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.TelefonComerçTextBox = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.ActualitzarComerçButton = new MaterialSkin.Controls.MaterialButton();
             this.NIFComerçTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.DireccioComerçTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.NomComerçTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.TopClientsListView = new MaterialSkin.Controls.MaterialListView();
+            this.NomTopClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CercaClientsTextBox = new MaterialSkin.Controls.MaterialTextBox();
+            this.CercaClientsComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.ClientsListView = new MaterialSkin.Controls.MaterialListView();
             this.NomClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EmailClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TelefonClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ComandesFetesClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RecurentClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CercaClientsComboBox = new MaterialSkin.Controls.MaterialComboBox();
-            this.CercaClientsTextBox = new MaterialSkin.Controls.MaterialTextBox();
-            this.TopClientsListView = new MaterialSkin.Controls.MaterialListView();
-            this.NomTopClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CercarComandesComboBox.SuspendLayout();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.Pestanyes.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -109,21 +112,22 @@
             this.materialDrawer1.Text = "materialDrawer1";
             this.materialDrawer1.UseColors = false;
             // 
-            // CercarComandesComboBox
+            // Pestanyes
             // 
-            this.CercarComandesComboBox.Controls.Add(this.tabPage1);
-            this.CercarComandesComboBox.Controls.Add(this.tabPage2);
-            this.CercarComandesComboBox.Controls.Add(this.tabPage4);
-            this.CercarComandesComboBox.Controls.Add(this.tabPage5);
-            this.CercarComandesComboBox.Depth = 0;
-            this.CercarComandesComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CercarComandesComboBox.Location = new System.Drawing.Point(3, 64);
-            this.CercarComandesComboBox.MouseState = MaterialSkin.MouseState.HOVER;
-            this.CercarComandesComboBox.Multiline = true;
-            this.CercarComandesComboBox.Name = "CercarComandesComboBox";
-            this.CercarComandesComboBox.SelectedIndex = 0;
-            this.CercarComandesComboBox.Size = new System.Drawing.Size(1185, 683);
-            this.CercarComandesComboBox.TabIndex = 1;
+            this.Pestanyes.Controls.Add(this.tabPage1);
+            this.Pestanyes.Controls.Add(this.tabPage2);
+            this.Pestanyes.Controls.Add(this.tabPage4);
+            this.Pestanyes.Controls.Add(this.tabPage5);
+            this.Pestanyes.Depth = 0;
+            this.Pestanyes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pestanyes.ImageList = this.imageList1;
+            this.Pestanyes.Location = new System.Drawing.Point(3, 64);
+            this.Pestanyes.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Pestanyes.Multiline = true;
+            this.Pestanyes.Name = "Pestanyes";
+            this.Pestanyes.SelectedIndex = 0;
+            this.Pestanyes.Size = new System.Drawing.Size(1185, 683);
+            this.Pestanyes.TabIndex = 1;
             // 
             // tabPage1
             // 
@@ -134,10 +138,11 @@
             this.tabPage1.Controls.Add(this.EliminarProducteButton);
             this.tabPage1.Controls.Add(this.AfegirProducteButton);
             this.tabPage1.Controls.Add(this.ListViewProductes);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.ImageKey = "Productes.png";
+            this.tabPage1.Location = new System.Drawing.Point(4, 39);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1177, 657);
+            this.tabPage1.Size = new System.Drawing.Size(1177, 640);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Productes";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -295,7 +300,7 @@
             this.ListViewProductes.MouseState = MaterialSkin.MouseState.OUT;
             this.ListViewProductes.Name = "ListViewProductes";
             this.ListViewProductes.OwnerDraw = true;
-            this.ListViewProductes.Size = new System.Drawing.Size(1165, 527);
+            this.ListViewProductes.Size = new System.Drawing.Size(1165, 510);
             this.ListViewProductes.TabIndex = 0;
             this.ListViewProductes.UseCompatibleStateImageBehavior = false;
             this.ListViewProductes.View = System.Windows.Forms.View.Details;
@@ -345,15 +350,16 @@
             // 
             this.tabPage2.Controls.Add(this.CercarComandesTextBox);
             this.tabPage2.Controls.Add(this.materialListView1);
-            this.tabPage2.Controls.Add(this.materialComboBox1);
+            this.tabPage2.Controls.Add(this.CercarComandesComboBox);
             this.tabPage2.Controls.Add(this.ComandesListView);
             this.tabPage2.Controls.Add(this.GenerarFacturaComandaButton);
             this.tabPage2.Controls.Add(this.ModEstatComandaButton);
             this.tabPage2.Controls.Add(this.EliminarComandesButton);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.ImageKey = "Comandes.png";
+            this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1177, 657);
+            this.tabPage2.Size = new System.Drawing.Size(1177, 640);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Comandes";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -392,7 +398,7 @@
             this.materialListView1.Depth = 0;
             this.materialListView1.FullRowSelect = true;
             this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(323, 342);
+            this.materialListView1.Location = new System.Drawing.Point(323, 325);
             this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
@@ -423,33 +429,33 @@
             this.PreuProducteComanda.Text = "Preu";
             this.PreuProducteComanda.Width = 106;
             // 
-            // materialComboBox1
+            // CercarComandesComboBox
             // 
-            this.materialComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialComboBox1.AutoResize = false;
-            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox1.Depth = 0;
-            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox1.DropDownHeight = 174;
-            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox1.DropDownWidth = 121;
-            this.materialComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox1.FormattingEnabled = true;
-            this.materialComboBox1.IntegralHeight = false;
-            this.materialComboBox1.ItemHeight = 43;
-            this.materialComboBox1.Items.AddRange(new object[] {
+            this.CercarComandesComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CercarComandesComboBox.AutoResize = false;
+            this.CercarComandesComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.CercarComandesComboBox.Depth = 0;
+            this.CercarComandesComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.CercarComandesComboBox.DropDownHeight = 174;
+            this.CercarComandesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CercarComandesComboBox.DropDownWidth = 121;
+            this.CercarComandesComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.CercarComandesComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.CercarComandesComboBox.FormattingEnabled = true;
+            this.CercarComandesComboBox.IntegralHeight = false;
+            this.CercarComandesComboBox.ItemHeight = 43;
+            this.CercarComandesComboBox.Items.AddRange(new object[] {
             "Numero",
             "Client",
             "Pagat",
             "Estat"});
-            this.materialComboBox1.Location = new System.Drawing.Point(1018, 6);
-            this.materialComboBox1.MaxDropDownItems = 4;
-            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.Size = new System.Drawing.Size(153, 49);
-            this.materialComboBox1.StartIndex = 0;
-            this.materialComboBox1.TabIndex = 4;
+            this.CercarComandesComboBox.Location = new System.Drawing.Point(1018, 6);
+            this.CercarComandesComboBox.MaxDropDownItems = 4;
+            this.CercarComandesComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.CercarComandesComboBox.Name = "CercarComandesComboBox";
+            this.CercarComandesComboBox.Size = new System.Drawing.Size(153, 49);
+            this.CercarComandesComboBox.StartIndex = 0;
+            this.CercarComandesComboBox.TabIndex = 4;
             // 
             // ComandesListView
             // 
@@ -477,7 +483,7 @@
             this.ComandesListView.MouseState = MaterialSkin.MouseState.OUT;
             this.ComandesListView.Name = "ComandesListView";
             this.ComandesListView.OwnerDraw = true;
-            this.ComandesListView.Size = new System.Drawing.Size(981, 210);
+            this.ComandesListView.Size = new System.Drawing.Size(981, 193);
             this.ComandesListView.TabIndex = 3;
             this.ComandesListView.UseCompatibleStateImageBehavior = false;
             this.ComandesListView.View = System.Windows.Forms.View.Details;
@@ -585,14 +591,15 @@
             // 
             this.tabPage4.Controls.Add(this.EmailComerçTextBox);
             this.tabPage4.Controls.Add(this.TelefonComerçTextBox);
-            this.tabPage4.Controls.Add(this.materialButton1);
+            this.tabPage4.Controls.Add(this.ActualitzarComerçButton);
             this.tabPage4.Controls.Add(this.NIFComerçTextBox);
             this.tabPage4.Controls.Add(this.DireccioComerçTextBox);
             this.tabPage4.Controls.Add(this.NomComerçTextBox);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.ImageKey = "Info.png";
+            this.tabPage4.Location = new System.Drawing.Point(4, 39);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1177, 657);
+            this.tabPage4.Size = new System.Drawing.Size(1177, 640);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Info comerç";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -658,25 +665,25 @@
             this.TelefonComerçTextBox.UseSystemPasswordChar = false;
             this.TelefonComerçTextBox.ValidatingType = null;
             // 
-            // materialButton1
+            // ActualitzarComerçButton
             // 
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(512, 585);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(165, 36);
-            this.materialButton1.TabIndex = 5;
-            this.materialButton1.Text = "Actualitzar";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.ActualitzarComerçButton.AutoSize = false;
+            this.ActualitzarComerçButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ActualitzarComerçButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.ActualitzarComerçButton.Depth = 0;
+            this.ActualitzarComerçButton.HighEmphasis = true;
+            this.ActualitzarComerçButton.Icon = null;
+            this.ActualitzarComerçButton.Location = new System.Drawing.Point(512, 585);
+            this.ActualitzarComerçButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ActualitzarComerçButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ActualitzarComerçButton.Name = "ActualitzarComerçButton";
+            this.ActualitzarComerçButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.ActualitzarComerçButton.Size = new System.Drawing.Size(165, 36);
+            this.ActualitzarComerçButton.TabIndex = 5;
+            this.ActualitzarComerçButton.Text = "Actualitzar";
+            this.ActualitzarComerçButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ActualitzarComerçButton.UseAccentColor = false;
+            this.ActualitzarComerçButton.UseVisualStyleBackColor = true;
             // 
             // NIFComerçTextBox
             // 
@@ -738,13 +745,83 @@
             this.tabPage5.Controls.Add(this.CercaClientsTextBox);
             this.tabPage5.Controls.Add(this.CercaClientsComboBox);
             this.tabPage5.Controls.Add(this.ClientsListView);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.ImageKey = "Clients.png";
+            this.tabPage5.Location = new System.Drawing.Point(4, 39);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1177, 657);
+            this.tabPage5.Size = new System.Drawing.Size(1177, 640);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Clients";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // TopClientsListView
+            // 
+            this.TopClientsListView.AutoSizeTable = false;
+            this.TopClientsListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.TopClientsListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TopClientsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.NomTopClient});
+            this.TopClientsListView.Depth = 0;
+            this.TopClientsListView.FullRowSelect = true;
+            this.TopClientsListView.HideSelection = false;
+            this.TopClientsListView.Location = new System.Drawing.Point(918, 38);
+            this.TopClientsListView.MinimumSize = new System.Drawing.Size(200, 100);
+            this.TopClientsListView.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.TopClientsListView.MouseState = MaterialSkin.MouseState.OUT;
+            this.TopClientsListView.Name = "TopClientsListView";
+            this.TopClientsListView.OwnerDraw = true;
+            this.TopClientsListView.Size = new System.Drawing.Size(232, 597);
+            this.TopClientsListView.TabIndex = 3;
+            this.TopClientsListView.UseCompatibleStateImageBehavior = false;
+            this.TopClientsListView.View = System.Windows.Forms.View.Details;
+            // 
+            // NomTopClient
+            // 
+            this.NomTopClient.Text = "Nom";
+            // 
+            // CercaClientsTextBox
+            // 
+            this.CercaClientsTextBox.AnimateReadOnly = false;
+            this.CercaClientsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CercaClientsTextBox.Depth = 0;
+            this.CercaClientsTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.CercaClientsTextBox.Hint = "Cercar";
+            this.CercaClientsTextBox.LeadingIcon = null;
+            this.CercaClientsTextBox.Location = new System.Drawing.Point(201, 36);
+            this.CercaClientsTextBox.MaxLength = 50;
+            this.CercaClientsTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.CercaClientsTextBox.Multiline = false;
+            this.CercaClientsTextBox.Name = "CercaClientsTextBox";
+            this.CercaClientsTextBox.Size = new System.Drawing.Size(155, 50);
+            this.CercaClientsTextBox.TabIndex = 2;
+            this.CercaClientsTextBox.Text = "";
+            this.CercaClientsTextBox.TrailingIcon = null;
+            // 
+            // CercaClientsComboBox
+            // 
+            this.CercaClientsComboBox.AutoResize = false;
+            this.CercaClientsComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.CercaClientsComboBox.Depth = 0;
+            this.CercaClientsComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.CercaClientsComboBox.DropDownHeight = 174;
+            this.CercaClientsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CercaClientsComboBox.DropDownWidth = 121;
+            this.CercaClientsComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.CercaClientsComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.CercaClientsComboBox.FormattingEnabled = true;
+            this.CercaClientsComboBox.IntegralHeight = false;
+            this.CercaClientsComboBox.ItemHeight = 43;
+            this.CercaClientsComboBox.Items.AddRange(new object[] {
+            "Nom",
+            "Email",
+            "Telefon"});
+            this.CercaClientsComboBox.Location = new System.Drawing.Point(6, 38);
+            this.CercaClientsComboBox.MaxDropDownItems = 4;
+            this.CercaClientsComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.CercaClientsComboBox.Name = "CercaClientsComboBox";
+            this.CercaClientsComboBox.Size = new System.Drawing.Size(165, 49);
+            this.CercaClientsComboBox.StartIndex = 0;
+            this.CercaClientsComboBox.TabIndex = 1;
             // 
             // ClientsListView
             // 
@@ -796,82 +873,28 @@
             this.RecurentClient.Text = "Recurent";
             this.RecurentClient.Width = 103;
             // 
-            // CercaClientsComboBox
+            // imageList1
             // 
-            this.CercaClientsComboBox.AutoResize = false;
-            this.CercaClientsComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.CercaClientsComboBox.Depth = 0;
-            this.CercaClientsComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.CercaClientsComboBox.DropDownHeight = 174;
-            this.CercaClientsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CercaClientsComboBox.DropDownWidth = 121;
-            this.CercaClientsComboBox.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.CercaClientsComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.CercaClientsComboBox.FormattingEnabled = true;
-            this.CercaClientsComboBox.IntegralHeight = false;
-            this.CercaClientsComboBox.ItemHeight = 43;
-            this.CercaClientsComboBox.Location = new System.Drawing.Point(6, 38);
-            this.CercaClientsComboBox.MaxDropDownItems = 4;
-            this.CercaClientsComboBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.CercaClientsComboBox.Name = "CercaClientsComboBox";
-            this.CercaClientsComboBox.Size = new System.Drawing.Size(165, 49);
-            this.CercaClientsComboBox.StartIndex = 0;
-            this.CercaClientsComboBox.TabIndex = 1;
-            // 
-            // CercaClientsTextBox
-            // 
-            this.CercaClientsTextBox.AnimateReadOnly = false;
-            this.CercaClientsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CercaClientsTextBox.Depth = 0;
-            this.CercaClientsTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.CercaClientsTextBox.Hint = "Cercar";
-            this.CercaClientsTextBox.LeadingIcon = null;
-            this.CercaClientsTextBox.Location = new System.Drawing.Point(201, 36);
-            this.CercaClientsTextBox.MaxLength = 50;
-            this.CercaClientsTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.CercaClientsTextBox.Multiline = false;
-            this.CercaClientsTextBox.Name = "CercaClientsTextBox";
-            this.CercaClientsTextBox.Size = new System.Drawing.Size(155, 50);
-            this.CercaClientsTextBox.TabIndex = 2;
-            this.CercaClientsTextBox.Text = "";
-            this.CercaClientsTextBox.TrailingIcon = null;
-            // 
-            // TopClientsListView
-            // 
-            this.TopClientsListView.AutoSizeTable = false;
-            this.TopClientsListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.TopClientsListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TopClientsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.NomTopClient});
-            this.TopClientsListView.Depth = 0;
-            this.TopClientsListView.FullRowSelect = true;
-            this.TopClientsListView.HideSelection = false;
-            this.TopClientsListView.Location = new System.Drawing.Point(918, 38);
-            this.TopClientsListView.MinimumSize = new System.Drawing.Size(200, 100);
-            this.TopClientsListView.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.TopClientsListView.MouseState = MaterialSkin.MouseState.OUT;
-            this.TopClientsListView.Name = "TopClientsListView";
-            this.TopClientsListView.OwnerDraw = true;
-            this.TopClientsListView.Size = new System.Drawing.Size(232, 597);
-            this.TopClientsListView.TabIndex = 3;
-            this.TopClientsListView.UseCompatibleStateImageBehavior = false;
-            this.TopClientsListView.View = System.Windows.Forms.View.Details;
-            // 
-            // NomTopClient
-            // 
-            this.NomTopClient.Text = "Nom";
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Clients.png");
+            this.imageList1.Images.SetKeyName(1, "Comandes.png");
+            this.imageList1.Images.SetKeyName(2, "Info.png");
+            this.imageList1.Images.SetKeyName(3, "Productes.png");
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1191, 750);
-            this.Controls.Add(this.CercarComandesComboBox);
+            this.Controls.Add(this.Pestanyes);
             this.Controls.Add(this.materialDrawer1);
-            this.DrawerTabControl = this.CercarComandesComboBox;
+            this.DrawerShowIconsWhenHidden = true;
+            this.DrawerTabControl = this.Pestanyes;
+            this.DrawerUseColors = true;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.CercarComandesComboBox.ResumeLayout(false);
+            this.Pestanyes.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -884,12 +907,11 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialDrawer materialDrawer1;
-        private MaterialSkin.Controls.MaterialTabControl CercarComandesComboBox;
+        private MaterialSkin.Controls.MaterialTabControl Pestanyes;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private MaterialSkin.Controls.MaterialListView ListViewProductes;
         private System.Windows.Forms.ColumnHeader CodiDeBarres;
         private System.Windows.Forms.ColumnHeader Nom;
         private System.Windows.Forms.ColumnHeader Imatge;
@@ -897,16 +919,6 @@
         private System.Windows.Forms.ColumnHeader Preu;
         private System.Windows.Forms.ColumnHeader Stock;
         private System.Windows.Forms.ColumnHeader Categories;
-        private MaterialSkin.Controls.MaterialButton EliminarProducteButton;
-        private MaterialSkin.Controls.MaterialButton AfegirProducteButton;
-        private MaterialSkin.Controls.MaterialButton ModificarProducteButton;
-        private MaterialSkin.Controls.MaterialComboBox CercarProductesComboBox;
-        private MaterialSkin.Controls.MaterialTextBox CercarProductesTextBox;
-        private MaterialSkin.Controls.MaterialButton RefrescarProductesButton;
-        private MaterialSkin.Controls.MaterialButton EliminarComandesButton;
-        private MaterialSkin.Controls.MaterialButton ModEstatComandaButton;
-        private MaterialSkin.Controls.MaterialButton GenerarFacturaComandaButton;
-        private MaterialSkin.Controls.MaterialListView ComandesListView;
         private System.Windows.Forms.ColumnHeader Numero;
         private System.Windows.Forms.ColumnHeader Client;
         private System.Windows.Forms.ColumnHeader PreuTotal;
@@ -915,29 +927,41 @@
         private System.Windows.Forms.ColumnHeader Recollida;
         private System.Windows.Forms.ColumnHeader NumProductes;
         private System.Windows.Forms.ColumnHeader Estat;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
-        private MaterialSkin.Controls.MaterialListView materialListView1;
         private System.Windows.Forms.ColumnHeader CodiDeBarresComanda;
         private System.Windows.Forms.ColumnHeader NomProducteComanda;
         private System.Windows.Forms.ColumnHeader QuantitatComanda;
         private System.Windows.Forms.ColumnHeader PreuProducteComanda;
-        private MaterialSkin.Controls.MaterialTextBox CercarComandesTextBox;
-        private MaterialSkin.Controls.MaterialTextBox NomComerçTextBox;
-        private MaterialSkin.Controls.MaterialTextBox DireccioComerçTextBox;
-        private MaterialSkin.Controls.MaterialTextBox NIFComerçTextBox;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialMaskedTextBox TelefonComerçTextBox;
-        private MaterialSkin.Controls.MaterialTextBox EmailComerçTextBox;
-        private MaterialSkin.Controls.MaterialListView ClientsListView;
         private System.Windows.Forms.ColumnHeader NomClient;
         private System.Windows.Forms.ColumnHeader EmailClient;
         private System.Windows.Forms.ColumnHeader TelefonClient;
         private System.Windows.Forms.ColumnHeader ComandesFetesClient;
         private System.Windows.Forms.ColumnHeader RecurentClient;
-        private MaterialSkin.Controls.MaterialComboBox CercaClientsComboBox;
-        private MaterialSkin.Controls.MaterialListView TopClientsListView;
         private System.Windows.Forms.ColumnHeader NomTopClient;
-        private MaterialSkin.Controls.MaterialTextBox CercaClientsTextBox;
+        public MaterialSkin.Controls.MaterialListView ListViewProductes;
+        public MaterialSkin.Controls.MaterialButton EliminarProducteButton;
+        public MaterialSkin.Controls.MaterialButton AfegirProducteButton;
+        public MaterialSkin.Controls.MaterialButton ModificarProducteButton;
+        public MaterialSkin.Controls.MaterialComboBox CercarProductesComboBox;
+        public MaterialSkin.Controls.MaterialTextBox CercarProductesTextBox;
+        public MaterialSkin.Controls.MaterialButton RefrescarProductesButton;
+        public MaterialSkin.Controls.MaterialButton EliminarComandesButton;
+        public MaterialSkin.Controls.MaterialButton ModEstatComandaButton;
+        public MaterialSkin.Controls.MaterialButton GenerarFacturaComandaButton;
+        public MaterialSkin.Controls.MaterialListView ComandesListView;
+        public MaterialSkin.Controls.MaterialComboBox CercarComandesComboBox;
+        public MaterialSkin.Controls.MaterialListView materialListView1;
+        public MaterialSkin.Controls.MaterialTextBox CercarComandesTextBox;
+        public MaterialSkin.Controls.MaterialTextBox NomComerçTextBox;
+        public MaterialSkin.Controls.MaterialTextBox DireccioComerçTextBox;
+        public MaterialSkin.Controls.MaterialTextBox NIFComerçTextBox;
+        public MaterialSkin.Controls.MaterialButton ActualitzarComerçButton;
+        public MaterialSkin.Controls.MaterialMaskedTextBox TelefonComerçTextBox;
+        public MaterialSkin.Controls.MaterialTextBox EmailComerçTextBox;
+        public MaterialSkin.Controls.MaterialListView ClientsListView;
+        public MaterialSkin.Controls.MaterialComboBox CercaClientsComboBox;
+        public MaterialSkin.Controls.MaterialListView TopClientsListView;
+        public MaterialSkin.Controls.MaterialTextBox CercaClientsTextBox;
+        public System.Windows.Forms.ImageList imageList1;
     }
 }
 
