@@ -86,6 +86,8 @@
             this.ComandesFetesClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RecurentClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.TotalComandesClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pestanyes.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -741,6 +743,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.materialLabel1);
             this.tabPage5.Controls.Add(this.TopClientsListView);
             this.tabPage5.Controls.Add(this.CercaClientsTextBox);
             this.tabPage5.Controls.Add(this.CercaClientsComboBox);
@@ -760,17 +763,18 @@
             this.TopClientsListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.TopClientsListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TopClientsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.NomTopClient});
+            this.NomTopClient,
+            this.TotalComandesClient});
             this.TopClientsListView.Depth = 0;
             this.TopClientsListView.FullRowSelect = true;
             this.TopClientsListView.HideSelection = false;
-            this.TopClientsListView.Location = new System.Drawing.Point(918, 38);
+            this.TopClientsListView.Location = new System.Drawing.Point(891, 93);
             this.TopClientsListView.MinimumSize = new System.Drawing.Size(200, 100);
             this.TopClientsListView.MouseLocation = new System.Drawing.Point(-1, -1);
             this.TopClientsListView.MouseState = MaterialSkin.MouseState.OUT;
             this.TopClientsListView.Name = "TopClientsListView";
             this.TopClientsListView.OwnerDraw = true;
-            this.TopClientsListView.Size = new System.Drawing.Size(232, 597);
+            this.TopClientsListView.Size = new System.Drawing.Size(232, 540);
             this.TopClientsListView.TabIndex = 3;
             this.TopClientsListView.UseCompatibleStateImageBehavior = false;
             this.TopClientsListView.View = System.Windows.Forms.View.Details;
@@ -778,6 +782,7 @@
             // NomTopClient
             // 
             this.NomTopClient.Text = "Nom";
+            this.NomTopClient.Width = 127;
             // 
             // CercaClientsTextBox
             // 
@@ -882,6 +887,23 @@
             this.imageList1.Images.SetKeyName(2, "Info.png");
             this.imageList1.Images.SetKeyName(3, "Productes.png");
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(891, 56);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(83, 19);
+            this.materialLabel1.TabIndex = 4;
+            this.materialLabel1.Text = "Top clients:";
+            // 
+            // TotalComandesClient
+            // 
+            this.TotalComandesClient.Text = "Comandes";
+            this.TotalComandesClient.Width = 103;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -900,6 +922,7 @@
             this.tabPage2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -962,6 +985,8 @@
         public MaterialSkin.Controls.MaterialListView TopClientsListView;
         public MaterialSkin.Controls.MaterialTextBox CercaClientsTextBox;
         public System.Windows.Forms.ImageList imageList1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.ColumnHeader TotalComandesClient;
     }
 }
 

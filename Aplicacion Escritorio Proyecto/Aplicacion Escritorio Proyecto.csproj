@@ -54,6 +54,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\Controller.cs" />
+    <Compile Include="Model\Comerç.cs" />
+    <Compile Include="Model\Encarrec.cs" />
+    <Compile Include="Model\Producte.cs" />
+    <Compile Include="Model\Sucursal.cs" />
+    <Compile Include="Model\Usuari.cs" />
     <Compile Include="Vista\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,9 +102,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Vista\Imatges\Clients.png" />
     <Content Include="Vista\Imatges\Comandes.png" />
