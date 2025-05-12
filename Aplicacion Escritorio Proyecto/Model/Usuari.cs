@@ -8,13 +8,13 @@ namespace Aplicacion_Escritorio_Proyecto.Model
 {
     public class Usuari
     {
-        public int? UsuariId {  get; set; }
-        public string NomUsuari {  get; set; }
-        public string Correu { get; set; }
-        public string Contrasenya { get; set; }
-        public string Rol { get; set; }
-        public int? SucursalId { get; set; }
-        public int? ComerçId { get; set; }
+        public int? usuId {  get; set; }
+        public string nomUsuari {  get; set; }
+        public string correu { get; set; }
+        public string contrasenya { get; set; }
+        public string rol { get; set; }
+        public int? sucursalId { get; set; }
+        public int? comerçId { get; set; }
 
         public Usuari()
         {
@@ -23,12 +23,12 @@ namespace Aplicacion_Escritorio_Proyecto.Model
 
         public Usuari(string NomUsuari, string Correu, string Contrasenya, string Rol, int? SucursalId, int? ComerçId)
         {
-            this.NomUsuari = NomUsuari;
-            this.Correu = Correu;
-            this.Contrasenya = Contrasenya;
-            this.Rol = Rol;
-            this.SucursalId = SucursalId;
-            this.ComerçId = ComerçId;
+            this.nomUsuari = NomUsuari;
+            this.correu = Correu;
+            this.contrasenya = Contrasenya;
+            this.rol = Rol;
+            this.sucursalId = SucursalId;
+            this.comerçId = ComerçId;
         }
     }
 }

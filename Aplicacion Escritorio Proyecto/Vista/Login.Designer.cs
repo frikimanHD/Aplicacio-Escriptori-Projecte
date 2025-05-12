@@ -31,6 +31,8 @@
             this.UsuariLoginTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.ContrasenyaLoginTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.LoginButton = new MaterialSkin.Controls.MaterialButton();
+            this.labelError = new MaterialSkin.Controls.MaterialLabel();
+            this.RegistrarseButton = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // UsuariLoginTextBox
@@ -78,7 +80,7 @@
             this.LoginButton.Depth = 0;
             this.LoginButton.HighEmphasis = true;
             this.LoginButton.Icon = null;
-            this.LoginButton.Location = new System.Drawing.Point(317, 330);
+            this.LoginButton.Location = new System.Drawing.Point(382, 327);
             this.LoginButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.LoginButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.LoginButton.Name = "LoginButton";
@@ -90,24 +92,61 @@
             this.LoginButton.UseAccentColor = false;
             this.LoginButton.UseVisualStyleBackColor = true;
             // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Depth = 0;
+            this.labelError.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelError.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelError.Location = new System.Drawing.Point(266, 294);
+            this.labelError.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(1, 0);
+            this.labelError.TabIndex = 3;
+            // 
+            // RegistrarseButton
+            // 
+            this.RegistrarseButton.AutoSize = false;
+            this.RegistrarseButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.RegistrarseButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.RegistrarseButton.Depth = 0;
+            this.RegistrarseButton.HighEmphasis = true;
+            this.RegistrarseButton.Icon = null;
+            this.RegistrarseButton.Location = new System.Drawing.Point(251, 327);
+            this.RegistrarseButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.RegistrarseButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.RegistrarseButton.Name = "RegistrarseButton";
+            this.RegistrarseButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.RegistrarseButton.Size = new System.Drawing.Size(123, 36);
+            this.RegistrarseButton.TabIndex = 4;
+            this.RegistrarseButton.Text = "Registrar-se";
+            this.RegistrarseButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.RegistrarseButton.UseAccentColor = false;
+            this.RegistrarseButton.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.RegistrarseButton);
+            this.Controls.Add(this.labelError);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.ContrasenyaLoginTextBox);
             this.Controls.Add(this.UsuariLoginTextBox);
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTextBox UsuariLoginTextBox;
-        private MaterialSkin.Controls.MaterialTextBox ContrasenyaLoginTextBox;
-        private MaterialSkin.Controls.MaterialButton LoginButton;
+        public MaterialSkin.Controls.MaterialTextBox UsuariLoginTextBox;
+        public MaterialSkin.Controls.MaterialTextBox ContrasenyaLoginTextBox;
+        public MaterialSkin.Controls.MaterialButton LoginButton;
+        public MaterialSkin.Controls.MaterialLabel labelError;
+        public MaterialSkin.Controls.MaterialButton RegistrarseButton;
     }
 }

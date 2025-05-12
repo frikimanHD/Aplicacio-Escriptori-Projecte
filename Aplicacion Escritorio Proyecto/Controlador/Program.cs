@@ -1,9 +1,11 @@
 ﻿using Aplicacion_Escritorio_Proyecto.Vista;
+using Aplicacion_Escritorio_Proyecto.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Aplicacion_Escritorio_Proyecto.Controlador;
 
 namespace Aplicacion_Escritorio_Proyecto
 {
@@ -17,7 +19,8 @@ namespace Aplicacion_Escritorio_Proyecto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            new LoginController();
+            
         }
     }
 }

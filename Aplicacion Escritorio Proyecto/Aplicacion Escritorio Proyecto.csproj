@@ -54,6 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\Controller.cs" />
+    <Compile Include="Controlador\LoginController.cs" />
+    <Compile Include="Controlador\RegistreController.cs" />
+    <Compile Include="Model\ClientHttp.cs" />
     <Compile Include="Model\Comerç.cs" />
     <Compile Include="Model\Encarrec.cs" />
     <Compile Include="Model\Producte.cs" />
@@ -73,6 +76,12 @@
     <Compile Include="Vista\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Registre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Registre.Designer.cs">
+      <DependentUpon>Registre.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Vista\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +96,9 @@
     </Compile>
     <EmbeddedResource Include="Vista\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Registre.resx">
+      <DependentUpon>Registre.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
