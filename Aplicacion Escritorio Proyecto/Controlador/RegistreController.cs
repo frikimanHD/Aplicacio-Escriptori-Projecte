@@ -29,7 +29,11 @@ namespace Aplicacion_Escritorio_Proyecto.Controlador
         {
             f.RegistrarseButtonRegistre.Click += registrar;
             f.FormClosing += Tancant;
-            f.CancelaButtonRegistre.Click += Tancant;
+            f.CancelaButtonRegistre.Click += tancar;
+        }
+        void tancar (object sender, EventArgs e)
+        {
+            f.Close();
         }
         bool verificarMail(string email)
         {

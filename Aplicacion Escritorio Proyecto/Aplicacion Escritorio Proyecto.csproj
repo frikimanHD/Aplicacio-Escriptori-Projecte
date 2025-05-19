@@ -21,7 +21,10 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>5</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -55,13 +58,29 @@
   <ItemGroup>
     <Compile Include="Controlador\Controller.cs" />
     <Compile Include="Controlador\LoginController.cs" />
+    <Compile Include="Controlador\RegistrarComerçController.cs" />
+    <Compile Include="Controlador\RegistrarSucursalController.cs" />
     <Compile Include="Controlador\RegistreController.cs" />
+    <Compile Include="Controlador\SeleccionarSucursalController.cs" />
     <Compile Include="Model\ClientHttp.cs" />
     <Compile Include="Model\Comerç.cs" />
     <Compile Include="Model\Encarrec.cs" />
     <Compile Include="Model\Producte.cs" />
+    <Compile Include="Model\Stock.cs" />
     <Compile Include="Model\Sucursal.cs" />
     <Compile Include="Model\Usuari.cs" />
+    <Compile Include="Vista\CrearComerç.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\CrearComerç.Designer.cs">
+      <DependentUpon>CrearComerç.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\CrearSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\CrearSucursal.Designer.cs">
+      <DependentUpon>CrearSucursal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +101,18 @@
     <Compile Include="Vista\Registre.Designer.cs">
       <DependentUpon>Registre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\SeleccionarSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\SeleccionarSucursal.Designer.cs">
+      <DependentUpon>SeleccionarSucursal.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vista\CrearComerç.resx">
+      <DependentUpon>CrearComerç.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\CrearSucursal.resx">
+      <DependentUpon>CrearSucursal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Registre.resx">
       <DependentUpon>Registre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\SeleccionarSucursal.resx">
+      <DependentUpon>SeleccionarSucursal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

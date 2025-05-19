@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin;
 using MaterialSkin.Controls;
+using MaterialSkin;
+
 namespace Aplicacion_Escritorio_Proyecto.Vista
 {
-    public partial class Login : MaterialForm
+    public partial class CrearComerç : MaterialForm
     {
-        public Login()
+        public CrearComerç()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;

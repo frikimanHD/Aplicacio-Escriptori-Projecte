@@ -10,6 +10,7 @@ namespace Aplicacion_Escritorio_Proyecto.Controlador
     public class LoginController
     {
         Login login;
+        Usuari user;
         ClientHttp client;
         public LoginController()
         {
@@ -31,6 +32,7 @@ namespace Aplicacion_Escritorio_Proyecto.Controlador
         {
             login.LoginButton.Click += ferLogin;
             login.RegistrarseButton.Click += ferRegistre;
+            login.FormClosed += tancar;
         }
 
         public void ferLogin(object sender, EventArgs e)
@@ -47,7 +49,7 @@ namespace Aplicacion_Escritorio_Proyecto.Controlador
                 {
                     throw new Exception("Introdueix la teva contrasenya");
                 }
-                Usuari user = client.GetUsuari(correu);
+                user = client.GetUsuari(correu);
                 if(user == null)
                 {
                     throw new Exception("Usuari no trobat");
@@ -56,15 +58,28 @@ namespace Aplicacion_Escritorio_Proyecto.Controlador
                 {
                     throw new Exception("La contrasenya no es correcta");
                 }
-                var app = new Form1();
                 login.Hide();
-                new Controller();
-            }catch (Exception ex)
+                if (user.comerçId == null)
+                {
+                    new RegistrarComerçController(user, client);
+
+                }
+                else
+                {
+                    new SeleccionarSucursalController(client.GetComerç(user.comerçId), client);
+                }
+
+            }
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
                 login.labelError.Text = ex.Message;
             }
             
+        }
+        void tancar(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
         void ferRegistre(object sender, EventArgs e)
         {

@@ -17,6 +17,10 @@ namespace Aplicacion_Escritorio_Proyecto.Vista
         public Registre()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue600, Primary.Blue700, Primary.Blue500, Accent.Cyan700, TextShade.WHITE);
         }
     }
 }
