@@ -49,7 +49,7 @@
             this.Categories = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.CercarComandesTextBox = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
+            this.ProductesEncarrecListView = new MaterialSkin.Controls.MaterialListView();
             this.CodiDeBarresComanda = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NomProducteComanda = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.QuantitatComanda = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -61,7 +61,6 @@
             this.PreuTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Data = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pagat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Recollida = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NumProductes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Estat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.GenerarFacturaComandaButton = new MaterialSkin.Controls.MaterialButton();
@@ -75,19 +74,20 @@
             this.DireccioComerçTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.NomComerçTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.TopClientsListView = new MaterialSkin.Controls.MaterialListView();
             this.NomTopClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TotalComandesClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CercaClientsTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.CercaClientsComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.ClientsListView = new MaterialSkin.Controls.MaterialListView();
             this.NomClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.EmailClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TelefonClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ComandesFetesClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RecurentClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.TotalComandesClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labelErrorComerç = new MaterialSkin.Controls.MaterialLabel();
+            this.RefrescarComandesButton = new MaterialSkin.Controls.MaterialButton();
             this.Pestanyes.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -300,6 +300,7 @@
             this.ListViewProductes.MinimumSize = new System.Drawing.Size(200, 100);
             this.ListViewProductes.MouseLocation = new System.Drawing.Point(-1, -1);
             this.ListViewProductes.MouseState = MaterialSkin.MouseState.OUT;
+            this.ListViewProductes.MultiSelect = false;
             this.ListViewProductes.Name = "ListViewProductes";
             this.ListViewProductes.OwnerDraw = true;
             this.ListViewProductes.Size = new System.Drawing.Size(1165, 510);
@@ -350,8 +351,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.RefrescarComandesButton);
             this.tabPage2.Controls.Add(this.CercarComandesTextBox);
-            this.tabPage2.Controls.Add(this.materialListView1);
+            this.tabPage2.Controls.Add(this.ProductesEncarrecListView);
             this.tabPage2.Controls.Add(this.CercarComandesComboBox);
             this.tabPage2.Controls.Add(this.ComandesListView);
             this.tabPage2.Controls.Add(this.GenerarFacturaComandaButton);
@@ -385,31 +387,31 @@
             this.CercarComandesTextBox.Text = "";
             this.CercarComandesTextBox.TrailingIcon = null;
             // 
-            // materialListView1
+            // ProductesEncarrecListView
             // 
-            this.materialListView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.ProductesEncarrecListView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialListView1.AutoSizeTable = false;
-            this.materialListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ProductesEncarrecListView.AutoSizeTable = false;
+            this.ProductesEncarrecListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ProductesEncarrecListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ProductesEncarrecListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.CodiDeBarresComanda,
             this.NomProducteComanda,
             this.QuantitatComanda,
             this.PreuProducteComanda});
-            this.materialListView1.Depth = 0;
-            this.materialListView1.FullRowSelect = true;
-            this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(323, 325);
-            this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
-            this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView1.Name = "materialListView1";
-            this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(509, 297);
-            this.materialListView1.TabIndex = 5;
-            this.materialListView1.UseCompatibleStateImageBehavior = false;
-            this.materialListView1.View = System.Windows.Forms.View.Details;
+            this.ProductesEncarrecListView.Depth = 0;
+            this.ProductesEncarrecListView.FullRowSelect = true;
+            this.ProductesEncarrecListView.HideSelection = false;
+            this.ProductesEncarrecListView.Location = new System.Drawing.Point(323, 325);
+            this.ProductesEncarrecListView.MinimumSize = new System.Drawing.Size(200, 100);
+            this.ProductesEncarrecListView.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.ProductesEncarrecListView.MouseState = MaterialSkin.MouseState.OUT;
+            this.ProductesEncarrecListView.Name = "ProductesEncarrecListView";
+            this.ProductesEncarrecListView.OwnerDraw = true;
+            this.ProductesEncarrecListView.Size = new System.Drawing.Size(509, 297);
+            this.ProductesEncarrecListView.TabIndex = 5;
+            this.ProductesEncarrecListView.UseCompatibleStateImageBehavior = false;
+            this.ProductesEncarrecListView.View = System.Windows.Forms.View.Details;
             // 
             // CodiDeBarresComanda
             // 
@@ -473,7 +475,6 @@
             this.PreuTotal,
             this.Data,
             this.Pagat,
-            this.Recollida,
             this.NumProductes,
             this.Estat});
             this.ComandesListView.Depth = 0;
@@ -483,6 +484,7 @@
             this.ComandesListView.MinimumSize = new System.Drawing.Size(200, 100);
             this.ComandesListView.MouseLocation = new System.Drawing.Point(-1, -1);
             this.ComandesListView.MouseState = MaterialSkin.MouseState.OUT;
+            this.ComandesListView.MultiSelect = false;
             this.ComandesListView.Name = "ComandesListView";
             this.ComandesListView.OwnerDraw = true;
             this.ComandesListView.Size = new System.Drawing.Size(981, 193);
@@ -508,17 +510,12 @@
             // Data
             // 
             this.Data.Text = "Data";
-            this.Data.Width = 91;
+            this.Data.Width = 101;
             // 
             // Pagat
             // 
             this.Pagat.Text = "Pagat";
             this.Pagat.Width = 99;
-            // 
-            // Recollida
-            // 
-            this.Recollida.Text = "Recollida";
-            this.Recollida.Width = 114;
             // 
             // NumProductes
             // 
@@ -591,6 +588,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.labelErrorComerç);
             this.tabPage4.Controls.Add(this.EmailComerçTextBox);
             this.tabPage4.Controls.Add(this.TelefonComerçTextBox);
             this.tabPage4.Controls.Add(this.ActualitzarComerçButton);
@@ -757,6 +755,18 @@
             this.tabPage5.Text = "Clients";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(891, 56);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(83, 19);
+            this.materialLabel1.TabIndex = 4;
+            this.materialLabel1.Text = "Top clients:";
+            // 
             // TopClientsListView
             // 
             this.TopClientsListView.AutoSizeTable = false;
@@ -783,6 +793,11 @@
             // 
             this.NomTopClient.Text = "Nom";
             this.NomTopClient.Width = 127;
+            // 
+            // TotalComandesClient
+            // 
+            this.TotalComandesClient.Text = "Comandes";
+            this.TotalComandesClient.Width = 103;
             // 
             // CercaClientsTextBox
             // 
@@ -836,7 +851,6 @@
             this.ClientsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.NomClient,
             this.EmailClient,
-            this.TelefonClient,
             this.ComandesFetesClient,
             this.RecurentClient});
             this.ClientsListView.Depth = 0;
@@ -863,11 +877,6 @@
             this.EmailClient.Text = "Email";
             this.EmailClient.Width = 203;
             // 
-            // TelefonClient
-            // 
-            this.TelefonClient.Text = "Telefon";
-            this.TelefonClient.Width = 241;
-            // 
             // ComandesFetesClient
             // 
             this.ComandesFetesClient.Text = "Comandes fetes";
@@ -887,22 +896,35 @@
             this.imageList1.Images.SetKeyName(2, "Info.png");
             this.imageList1.Images.SetKeyName(3, "Productes.png");
             // 
-            // materialLabel1
+            // labelErrorComerç
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(891, 56);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(83, 19);
-            this.materialLabel1.TabIndex = 4;
-            this.materialLabel1.Text = "Top clients:";
+            this.labelErrorComerç.AutoSize = true;
+            this.labelErrorComerç.Depth = 0;
+            this.labelErrorComerç.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelErrorComerç.Location = new System.Drawing.Point(6, 550);
+            this.labelErrorComerç.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelErrorComerç.Name = "labelErrorComerç";
+            this.labelErrorComerç.Size = new System.Drawing.Size(1, 0);
+            this.labelErrorComerç.TabIndex = 8;
             // 
-            // TotalComandesClient
+            // RefrescarComandesButton
             // 
-            this.TotalComandesClient.Text = "Comandes";
-            this.TotalComandesClient.Width = 103;
+            this.RefrescarComandesButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.RefrescarComandesButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.RefrescarComandesButton.Depth = 0;
+            this.RefrescarComandesButton.HighEmphasis = true;
+            this.RefrescarComandesButton.Icon = null;
+            this.RefrescarComandesButton.Location = new System.Drawing.Point(512, 43);
+            this.RefrescarComandesButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.RefrescarComandesButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.RefrescarComandesButton.Name = "RefrescarComandesButton";
+            this.RefrescarComandesButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.RefrescarComandesButton.Size = new System.Drawing.Size(158, 36);
+            this.RefrescarComandesButton.TabIndex = 7;
+            this.RefrescarComandesButton.Text = "Refrescar";
+            this.RefrescarComandesButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.RefrescarComandesButton.UseAccentColor = false;
+            this.RefrescarComandesButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -921,6 +943,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
@@ -947,7 +970,6 @@
         private System.Windows.Forms.ColumnHeader PreuTotal;
         private System.Windows.Forms.ColumnHeader Data;
         private System.Windows.Forms.ColumnHeader Pagat;
-        private System.Windows.Forms.ColumnHeader Recollida;
         private System.Windows.Forms.ColumnHeader NumProductes;
         private System.Windows.Forms.ColumnHeader Estat;
         private System.Windows.Forms.ColumnHeader CodiDeBarresComanda;
@@ -956,7 +978,6 @@
         private System.Windows.Forms.ColumnHeader PreuProducteComanda;
         private System.Windows.Forms.ColumnHeader NomClient;
         private System.Windows.Forms.ColumnHeader EmailClient;
-        private System.Windows.Forms.ColumnHeader TelefonClient;
         private System.Windows.Forms.ColumnHeader ComandesFetesClient;
         private System.Windows.Forms.ColumnHeader RecurentClient;
         private System.Windows.Forms.ColumnHeader NomTopClient;
@@ -972,7 +993,7 @@
         public MaterialSkin.Controls.MaterialButton GenerarFacturaComandaButton;
         public MaterialSkin.Controls.MaterialListView ComandesListView;
         public MaterialSkin.Controls.MaterialComboBox CercarComandesComboBox;
-        public MaterialSkin.Controls.MaterialListView materialListView1;
+        public MaterialSkin.Controls.MaterialListView ProductesEncarrecListView;
         public MaterialSkin.Controls.MaterialTextBox CercarComandesTextBox;
         public MaterialSkin.Controls.MaterialTextBox NomComerçTextBox;
         public MaterialSkin.Controls.MaterialTextBox DireccioComerçTextBox;
@@ -987,6 +1008,8 @@
         public System.Windows.Forms.ImageList imageList1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.ColumnHeader TotalComandesClient;
+        public MaterialSkin.Controls.MaterialLabel labelErrorComerç;
+        public MaterialSkin.Controls.MaterialButton RefrescarComandesButton;
     }
 }
 

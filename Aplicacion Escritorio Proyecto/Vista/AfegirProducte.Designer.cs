@@ -130,8 +130,9 @@
             this.CategoriaComboBox.Items.AddRange(new object[] {
             "Verdura",
             "Congelat",
-            "Lacti",
+            "Làctics",
             "Fruita",
+            "Pa i brioixeria",
             "Miscel·lanis"});
             this.CategoriaComboBox.Location = new System.Drawing.Point(559, 94);
             this.CategoriaComboBox.MaxDropDownItems = 4;

@@ -14,23 +14,10 @@ namespace Aplicacion_Escritorio_Proyecto.Model
         public bool Pagat {  get; set; }
         public int SucursalId { get; set; }
         public int UsuId { get; set; }
-
-        public List<Producte> Cistella { get; set; }
-
+        public string Estat {  get; set; }
         public Encarrec()
         {
             
-        }
-
-        public Encarrec(decimal PreuTotal, DateTime? Data, bool Pagat, int SucursalId, int UsuId, List<Producte> Cistella)
-        {
-            this.PreuTotal = PreuTotal;
-            this.Data = Data;
-            this.Pagat = Pagat;
-            this.SucursalId = SucursalId;
-            this.UsuId = UsuId;
-            this.Cistella = Cistella;
-
         }
     }
 }

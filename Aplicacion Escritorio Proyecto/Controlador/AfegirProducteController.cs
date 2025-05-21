@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Aplicacion_Escritorio_Proyecto.Controlador
@@ -15,16 +16,18 @@ namespace Aplicacion_Escritorio_Proyecto.Controlador
         AfegirProducte f;
         int stock;
         ClientHttp c;
-        public AfegirProducteController(Producte? producte, int? stock, ClientHttp client)
+        Sucursal sucur;
+        public AfegirProducteController(Producte? producte, int? stock, ClientHttp client, Sucursal sucur)
         {
-            init(producte, stock, client);
+            init(producte, stock, client, sucur);
             initListeners();
             f.ShowDialog();
         }
-        void init(Producte? producte, int? stock, ClientHttp client)
+        void init(Producte? producte, int? stock, ClientHttp client, Sucursal sucursal)
         {
             f = new AfegirProducte();
             c = client;
+            sucur = sucursal;
             if (producte != null)
             {
                 prod = producte;
@@ -42,16 +45,46 @@ namespace Aplicacion_Escritorio_Proyecto.Controlador
         }
         void initListeners()
         {
-
+            f.ConfirmarButton.Click += afegir;
         }
-        void afegir(object sender, EventArgs e)
+        async void afegir(object sender, EventArgs e)
         {
             if (edicio)
             {
                 prod.Nom = f.NomTextBox.Text;
                 prod.Descripcio = f.DescripcioTextBox.Text;
                 prod.Categoria = f.CategoriaComboBox.SelectedItem.ToString();
+                prod.Preu = Double.Parse(f.PreuTextBox.Text);
+                stock = Int32.Parse(f.StockTextBox.Text);
+                Stock s = new Stock();
+                s.CodiDeBarres = prod.CodiDeBarres;
+                s.Stock1 = stock;
+                s.SucursalId = sucur.SucursalId.Value;
+                c.PutProducte(prod);
+                
+                c.PutStock(s);
             }
+            else
+            {
+                prod = new Producte();
+                prod.CodiDeBarres = f.CodiBarresTextBox.Text;
+                prod.Nom = f.NomTextBox.Text;
+                prod.Descripcio = f.DescripcioTextBox.Text;
+                prod.Categoria = f.CategoriaComboBox.SelectedItem.ToString();
+                prod.Preu = Double.Parse(f.PreuTextBox.Text);
+                stock = Int32.Parse(f.StockTextBox.Text);
+                Stock s = new Stock();
+                s.CodiDeBarres = prod.CodiDeBarres;
+                s.Stock1 = stock;
+                s.SucursalId = sucur.SucursalId.Value;
+                await c.PostProducte(prod);
+                
+                await c.PostStock(s);
+                
+                
+                
+            }
+            f.Close();
         }
 
     }

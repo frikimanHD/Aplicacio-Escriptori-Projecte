@@ -29,7 +29,16 @@ namespace Aplicacion_Escritorio_Proyecto.Model
             string JSONUsuaris = client.GetAsync("api/Usuaris").Result.Content.ReadAsStringAsync().Result;
             return JsonConvert.DeserializeObject<List<Usuari>>(JSONUsuaris);
         }
-
+        public Usuari GetUsuariId(int id)
+        {
+            string JSONUsuaris = client.GetAsync($"api/Usuaris/{id}").Result.Content.ReadAsStringAsync().Result;
+            return JsonConvert.DeserializeObject<Usuari>(JSONUsuaris);
+        }
+        public List<Usuari> GetUsuarisSucursal(int id)
+        {
+            string JSONUsuaris = client.GetAsync($"api/Usuaris/Clients/{id}").Result.Content.ReadAsStringAsync().Result;
+            return JsonConvert.DeserializeObject<List<Usuari>>(JSONUsuaris);
+        }
         public Usuari GetUsuari(string correu)
         {
             string JSONUsuari = client.GetAsync("api/UsuarisCorreu/" + correu).Result.Content.ReadAsStringAsync().Result;
@@ -51,7 +60,7 @@ namespace Aplicacion_Escritorio_Proyecto.Model
                 throw new Exception(response.ReasonPhrase);
             }
         }
-        public async void PostProducte(Producte p)
+        public async Task PostProducte(Producte p)
         {
             JObject jobjectProducte = JObject.FromObject(p);
             string JSONProducte = jobjectProducte.ToString();
@@ -59,10 +68,9 @@ namespace Aplicacion_Escritorio_Proyecto.Model
             var response = await client.PostAsync("api/Productes", content);
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception(response.ReasonPhrase);
+                throw new Exception(await response.Content.ReadAsStringAsync());
             }
         }
-
         public async void PostComerç(Usuari usuari, Comerç comerç)
         {
             JObject jobjectComerç = JObject.FromObject(comerç);
@@ -126,10 +134,73 @@ namespace Aplicacion_Escritorio_Proyecto.Model
             string jsonStock = client.GetAsync("api/Stock/Sucur/" + id).Result.Content.ReadAsStringAsync().Result;
             return JsonConvert.DeserializeObject<List<Stock>>(jsonStock);
         }
+        public async void PutStock(Stock s)
+        {
+            string jsonStock = JsonConvert.SerializeObject(s);
+            HttpContent httpContent = new StringContent(jsonStock, Encoding.UTF8, "application/json");
+            await client.PutAsync("api/Stock", httpContent);
+        }
+        public async Task PostStock(Stock s)
+        {
+        
+            string jsonStock = JsonConvert.SerializeObject(s);
+            HttpContent httpContent = new StringContent(jsonStock, Encoding.UTF8, "application/json");
+            await client.PostAsync("api/Stock", httpContent);
+        
+        }
+        public async Task DelStock(string CodiDeBarres, int SucursalId)
+        {
+            var result = await client.DeleteAsync($"api/Stock/CodiDeBarres={CodiDeBarres}&SucursalId= {SucursalId}");
+            Debug.WriteLine(CodiDeBarres);
+            Debug.WriteLine(SucursalId);
+            if (!result.IsSuccessStatusCode)
+            {
+                throw new Exception(result.Content.ReadAsStringAsync().Result);
+            }
+        }
         public Producte GetProducte(string codi)
         {
             string jsonProducte = client.GetAsync("api/Productes/"+codi).Result.Content.ReadAsStringAsync().Result;
             return JsonConvert.DeserializeObject<Producte>(jsonProducte);
+        }
+        public List<Encarrec> GetEncarrecsSucursal(int id)
+        {
+            string jsonEncarrecs = client.GetAsync($"api/Encarrecs/Sucursal/{id}").Result.Content.ReadAsStringAsync().Result;
+            return JsonConvert.DeserializeObject<List<Encarrec>>(jsonEncarrecs);
+        }
+        public List<Producte> GetProductesDeEncarrec(int id)
+        {
+            string jsonProductes = client.GetAsync($"api/ProducteEncarrec/Productes/{id}").Result.Content.ReadAsStringAsync().Result;
+
+            return JsonConvert.DeserializeObject<List<Producte>>(jsonProductes);
+
+        }
+        public List<ProducteEncarrec> GetProducteEncarrecs(int id)
+        {
+            string jsonEncarrecs = client.GetAsync($"api/ProducteEncarrec/{id}").Result.Content.ReadAsStringAsync().Result;
+            return JsonConvert.DeserializeObject<List<ProducteEncarrec>>(jsonEncarrecs);
+        }
+        public async Task DelEncarrec(int id)
+        {
+            await client.DeleteAsync($"api/ProducteEncarrec/{id}");
+            await client.DeleteAsync($"api/Encarrecs/{id}");
+        }
+        public async Task EditarEstat(int id, string estat)
+        {
+
+            var response = await client.PutAsync($"api/Encarrecs/Estat/encarrec={id},estat={estat}", null);
+        }
+        public async Task PutComerç(Comerç c)
+        {
+            string jsonComerç = JsonConvert.SerializeObject(c);
+            HttpContent content = new StringContent(jsonComerç, Encoding.UTF8, "application/json");
+            await client.PutAsync($"api/Comerç/{c.ComerçId}",content);
+        }
+        public async Task PutSucursal(Sucursal s)
+        {
+            string jsonSucur = JsonConvert.SerializeObject(s);
+            HttpContent content = new StringContent(jsonSucur, Encoding.UTF8, "application/json");
+            await client.PutAsync($"api/Sucursals/{s.SucursalId}", content);
         }
     }
 }
