@@ -86,6 +86,7 @@
             this.ContrasenyaTextBoxRegistre.MouseState = MaterialSkin.MouseState.OUT;
             this.ContrasenyaTextBoxRegistre.Multiline = false;
             this.ContrasenyaTextBoxRegistre.Name = "ContrasenyaTextBoxRegistre";
+            this.ContrasenyaTextBoxRegistre.Password = true;
             this.ContrasenyaTextBoxRegistre.Size = new System.Drawing.Size(221, 50);
             this.ContrasenyaTextBoxRegistre.TabIndex = 2;
             this.ContrasenyaTextBoxRegistre.Text = "";
@@ -104,6 +105,7 @@
             this.ConfirmaTextBoxRegistre.MouseState = MaterialSkin.MouseState.OUT;
             this.ConfirmaTextBoxRegistre.Multiline = false;
             this.ConfirmaTextBoxRegistre.Name = "ConfirmaTextBoxRegistre";
+            this.ConfirmaTextBoxRegistre.Password = true;
             this.ConfirmaTextBoxRegistre.Size = new System.Drawing.Size(221, 50);
             this.ConfirmaTextBoxRegistre.TabIndex = 3;
             this.ConfirmaTextBoxRegistre.Text = "";

@@ -72,7 +72,6 @@ namespace Aplicacion_Escritorio_Proyecto.Controlador
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
                 login.labelError.Text = ex.Message;
             }
             

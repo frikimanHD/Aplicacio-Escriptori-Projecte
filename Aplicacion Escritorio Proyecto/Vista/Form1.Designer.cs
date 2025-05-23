@@ -48,6 +48,7 @@
             this.Stock = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Categories = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.RefrescarComandesButton = new MaterialSkin.Controls.MaterialButton();
             this.CercarComandesTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.ProductesEncarrecListView = new MaterialSkin.Controls.MaterialListView();
             this.CodiDeBarresComanda = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -67,6 +68,7 @@
             this.ModEstatComandaButton = new MaterialSkin.Controls.MaterialButton();
             this.EliminarComandesButton = new MaterialSkin.Controls.MaterialButton();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.labelErrorComerç = new MaterialSkin.Controls.MaterialLabel();
             this.EmailComerçTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.TelefonComerçTextBox = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.ActualitzarComerçButton = new MaterialSkin.Controls.MaterialButton();
@@ -86,8 +88,6 @@
             this.ComandesFetesClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RecurentClient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.labelErrorComerç = new MaterialSkin.Controls.MaterialLabel();
-            this.RefrescarComandesButton = new MaterialSkin.Controls.MaterialButton();
             this.Pestanyes.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -368,6 +368,25 @@
             this.tabPage2.Text = "Comandes";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // RefrescarComandesButton
+            // 
+            this.RefrescarComandesButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.RefrescarComandesButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.RefrescarComandesButton.Depth = 0;
+            this.RefrescarComandesButton.HighEmphasis = true;
+            this.RefrescarComandesButton.Icon = null;
+            this.RefrescarComandesButton.Location = new System.Drawing.Point(512, 43);
+            this.RefrescarComandesButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.RefrescarComandesButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.RefrescarComandesButton.Name = "RefrescarComandesButton";
+            this.RefrescarComandesButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.RefrescarComandesButton.Size = new System.Drawing.Size(102, 36);
+            this.RefrescarComandesButton.TabIndex = 7;
+            this.RefrescarComandesButton.Text = "Refrescar";
+            this.RefrescarComandesButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.RefrescarComandesButton.UseAccentColor = false;
+            this.RefrescarComandesButton.UseVisualStyleBackColor = true;
+            // 
             // CercarComandesTextBox
             // 
             this.CercarComandesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -603,6 +622,17 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Info comerç";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // labelErrorComerç
+            // 
+            this.labelErrorComerç.AutoSize = true;
+            this.labelErrorComerç.Depth = 0;
+            this.labelErrorComerç.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelErrorComerç.Location = new System.Drawing.Point(6, 550);
+            this.labelErrorComerç.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelErrorComerç.Name = "labelErrorComerç";
+            this.labelErrorComerç.Size = new System.Drawing.Size(1, 0);
+            this.labelErrorComerç.TabIndex = 8;
             // 
             // EmailComerçTextBox
             // 
@@ -895,36 +925,6 @@
             this.imageList1.Images.SetKeyName(1, "Comandes.png");
             this.imageList1.Images.SetKeyName(2, "Info.png");
             this.imageList1.Images.SetKeyName(3, "Productes.png");
-            // 
-            // labelErrorComerç
-            // 
-            this.labelErrorComerç.AutoSize = true;
-            this.labelErrorComerç.Depth = 0;
-            this.labelErrorComerç.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelErrorComerç.Location = new System.Drawing.Point(6, 550);
-            this.labelErrorComerç.MouseState = MaterialSkin.MouseState.HOVER;
-            this.labelErrorComerç.Name = "labelErrorComerç";
-            this.labelErrorComerç.Size = new System.Drawing.Size(1, 0);
-            this.labelErrorComerç.TabIndex = 8;
-            // 
-            // RefrescarComandesButton
-            // 
-            this.RefrescarComandesButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.RefrescarComandesButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.RefrescarComandesButton.Depth = 0;
-            this.RefrescarComandesButton.HighEmphasis = true;
-            this.RefrescarComandesButton.Icon = null;
-            this.RefrescarComandesButton.Location = new System.Drawing.Point(512, 43);
-            this.RefrescarComandesButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.RefrescarComandesButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.RefrescarComandesButton.Name = "RefrescarComandesButton";
-            this.RefrescarComandesButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.RefrescarComandesButton.Size = new System.Drawing.Size(158, 36);
-            this.RefrescarComandesButton.TabIndex = 7;
-            this.RefrescarComandesButton.Text = "Refrescar";
-            this.RefrescarComandesButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.RefrescarComandesButton.UseAccentColor = false;
-            this.RefrescarComandesButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

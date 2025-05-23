@@ -32,7 +32,7 @@ namespace Aplicacion_Escritorio_Proyecto.Controlador
         {
             f.registrarComerçButton.Click += registrar;
         }
-        void registrar(object sender, EventArgs e)
+        async void registrar(object sender, EventArgs e)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace Aplicacion_Escritorio_Proyecto.Controlador
                 }
                 
                 comerç.NIF = f.NIFComerçTextBox.Text;
-                c.PostComerç(usuari, comerç);
+                await c.PostComerç(usuari, comerç);
                 f.Hide();
                 new SeleccionarSucursalController(comerç, c);
             }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.ListView;
 
 namespace Aplicacion_Escritorio_Proyecto.Controlador
 {
@@ -30,6 +31,7 @@ namespace Aplicacion_Escritorio_Proyecto.Controlador
             comerç = c.GetComerç(s.ComerçId);
             refreshProductes();
             refreshEncarrecs();
+            f.GenerarFacturaComandaButton.Enabled = false;
             f.NomComerçTextBox.Text = comerç.Nom;
             f.NIFComerçTextBox.Text = comerç.NIF;
             f.DireccioComerçTextBox.Text = s.Direccio;
@@ -170,7 +172,7 @@ namespace Aplicacion_Escritorio_Proyecto.Controlador
             await c.DelEncarrec(id);
             refreshEncarrecs();
         }
-        async void EditarEstat(object sender, EventArgs e)
+        void EditarEstat(object sender, EventArgs e)
         {
             int id = 0;
             foreach (ListViewItem item in f.ComandesListView.SelectedItems)
